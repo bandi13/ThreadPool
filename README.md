@@ -1,17 +1,7 @@
 ThreadPool
 ==========
 
-A simple C++11 Thread Pool implementation.
-
-Basic usage:
-```c++
-// create thread pool with 4 worker threads
-ThreadPool pool(4);
-
-// enqueue and store future
-auto result = pool.enqueue([](int answer) { return answer; }, 42);
-
-// get result from future
-std::cout << result.get() << std::endl;
-
-```
+A simple C++11 Thread Pool implementation which returns a Future. I have expanded
+the original version to have another version using the io_service in the ASIO Boost
+library. In my limited testing (refer to example.cpp), I have found that with Boost 1.56,
+the Thread Pool using the std library outperforms the Boost version.
