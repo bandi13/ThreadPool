@@ -15,7 +15,7 @@ int main()
 {
     
     ThreadPool pool(4);
-    std::vector< std::future<int> > results;
+    std::vector< std::shared_future<int> > results;
 #ifdef WITHBOOST
 		std::cout << "Running with boost version" << std::endl;
 #else
